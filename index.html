@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>RallyFeed - Main Timing View</title>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="top-bar">
+  <div class="left-section">
+    <div class="logo">RallyFeed</div>
+    <div class="event-selector">
+      <span>Dakar Rally 2024 &gt; Stage 5</span>
+      <button class="change-event-btn">Change</button>
+    </div>
+  </div>
+  <div class="right-section">
+    <button class="icon-btn search-icon">🔍</button>
+    <button class="icon-btn notifications-icon">🔔</button>
+    <button class="icon-btn profile-icon">👤</button>
+    <button class="icon-btn toggle-sidebar" id="toggleSidebar">☰</button>
+  </div>
+</header>
+
+<div class="page-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <h3>Filters</h3>
+      <ul class="filter-list">
+        <li><input type="checkbox" checked> Cars</li>
+        <li><input type="checkbox" checked> Bikes</li>
+        <li><input type="checkbox" checked> Trucks</li>
+        <li><input type="checkbox" checked> Quads</li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <h3>Favorites</h3>
+      <ul class="fav-list">
+        <li><span class="star">★</span> #301 N. Driver</li>
+        <li><span class="star">★</span> #202 S. Rider</li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <h3>Event Info</h3>
+      <ul class="links-list">
+        <li><a href="#">Results Archive</a></li>
+        <li><a href="#">Teams & Sponsors</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <h3>Community</h3>
+      <button class="community-btn">Open Live Chat</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="top-row">
+      <div class="map-container">
+        <div class="map-placeholder">[MAP HERE]</div>
+        <div class="time-scrubber">
+          <span>← Replay</span>
+          <input type="range" min="0" max="100" value="100">
+          <span>Live →</span>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="video-placeholder">[LIVE VIDEO FEED]</div>
+        <div class="video-controls">
+          <button>▮▮</button>
+          <button>▶</button>
+          <button>⤫</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="leaderboard-section">
+      <h2>Stage Leaderboard</h2>
+      <table class="leaderboard-table">
+        <thead>
+          <tr>
+            <th>Pos</th>
+            <th>Num</th>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Stage Time</th>
+            <th>Overall Time</th>
+            <th>Gap</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight">
+            <td>1</td>
+            <td>#301</td>
+            <td>N. Driver</td>
+            <td>Car</td>
+            <td>2:13:45</td>
+            <td>12:45:30</td>
+            <td>--</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>#202</td>
+            <td>S. Rider</td>
+            <td>Bike</td>
+            <td>2:14:10</td>
+            <td>12:46:20</td>
+            <td>+0:25</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>#405</td>
+            <td>M. Pilot</td>
+            <td>Truck</td>
+            <td>2:15:00</td>
+            <td>12:50:00</td>
+            <td>+1:15</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="bottom-panels">
+      <div class="comparison-widget">
+        <h3>Comparison</h3>
+        <div class="compare-inputs">
+          <select>
+            <option>#301 N. Driver</option>
+            <option>#202 S. Rider</option>
+            <option>#405 M. Pilot</option>
+          </select>
+          <select>
+            <option>#202 S. Rider</option>
+            <option>#301 N. Driver</option>
+            <option>#405 M. Pilot</option>
+          </select>
+        </div>
+        <div class="compare-details">Speed last 10km: #301 (110km/h) vs #202 (108km/h)</div>
+      </div>
+
+      <div class="predictions-widget">
+        <h3>Predictions</h3>
+        <p>Projected Stage Winner: #301 (Car) with 85% confidence</p>
+      </div>
+
+      <div class="community-feed">
+        <h3>Community Highlights</h3>
+        <ul>
+          <li><strong>User123:</strong> Amazing overtake by #301!</li>
+          <li><strong>RallyFan:</strong> Weather looks tough ahead.</li>
+          <li><strong>OfficialFeed:</strong> Next checkpoint in 10 mins.</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="sponsors">
+    <span>Powered by XYZ Data</span> | <span>Sponsored by ABC Motors</span>
+  </div>
+  <div class="links">
+    <a href="#">About</a> | <a href="#">Support</a> | <a href="#">Terms</a>
+  </div>
+</footer>
+
+<script>
+  // Simple JS to toggle sidebar
+  const toggleBtn = document.getElementById('toggleSidebar');
+  const sidebar = document.getElementById('sidebar');
+  
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('collapsed');
+  });
+</script>
+
+</body>
+</html>
